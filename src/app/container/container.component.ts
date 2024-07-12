@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContainerService } from './container.service';
 
 @Component({
   selector: 'app-container',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
+  //CONSTRUCTOR TO INJECT SERVICES
+  constructor(public containerService: ContainerService){}
 
 }

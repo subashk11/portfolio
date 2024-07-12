@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContainerService } from '../container.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class WelcomePageComponent {
 
+  //CONSTRUCTOR TO INJECT SERVICES TO COMPONENT
+  constructor(
+    private containerService: ContainerService
+  ){}
+  renderHeader(event: Event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.containerService.currentPage = 1;
+  }
 }

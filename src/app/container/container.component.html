@@ -1,3 +1,9 @@
-<div class="justify-center flex items-center h-screen w-screen">
-    <app-welcome-page></app-welcome-page>
+<div class="">
+    <app-welcome-page *ngIf="containerService.currentPage == 0"></app-welcome-page>
+
+    <!-- RENDER MAIN PAGE -->
+    <div *ngIf="containerService.currentPage > 0">
+        <app-header></app-header>
+        <app-about-page></app-about-page>
+    </div>
 </div>
