@@ -11,11 +11,18 @@ export class HeaderComponent {
 
   //ENABLE HOME PAGE LAYOUT
   openHome(){
+    this.containerService.updateRefOfStage.next('welcome');
     this.containerService.currentPage = 0;
   }
 
   //OPEN ABOUT PAGE
   openAbout(){
+    this.containerService.updateRefOfStage.next('about');
     this.containerService.currentPage = 1;
+  }
+
+  openSkills(){
+    this.containerService.currentPage = 3;
+    this.containerService.updateRefOfStage.next('skills');
   }
 }

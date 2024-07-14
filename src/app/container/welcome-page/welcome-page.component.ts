@@ -16,6 +16,8 @@ export class WelcomePageComponent {
     event.preventDefault();
     event.stopPropagation();
 
+    //SCROLL TO ABOUT PAGE.
     this.containerService.currentPage = 1;
+    this.containerService.updateRefOfStage.next('about');
   }
 }

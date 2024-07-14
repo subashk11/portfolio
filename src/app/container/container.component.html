@@ -1,9 +1,6 @@
-<div class="">
-    <app-welcome-page *ngIf="containerService.currentPage == 0"></app-welcome-page>
-
-    <!-- RENDER MAIN PAGE -->
-    <div *ngIf="containerService.currentPage > 0">
-        <app-header></app-header>
-        <app-about-page></app-about-page>
-    </div>
+<div class="relative">
+    <app-welcome-page id = "appWelcomePage"></app-welcome-page>
+    <app-header class="sticky top-0"></app-header>
+    <app-about-page id = "appAboutPage"></app-about-page>
+    <app-skills-page id = "appSkillsPage"></app-skills-page>
 </div>
