@@ -22,7 +22,17 @@ export class HeaderComponent {
   }
 
   openSkills(){
-    this.containerService.currentPage = 3;
+    this.containerService.currentPage = 2;
     this.containerService.updateRefOfStage.next('skills');
+  }
+
+  openProjects(){
+    this.containerService.currentPage = 3;
+    this.containerService.updateRefOfStage.next('projects');
+  }
+
+  openContactInfo(){
+    this.containerService.currentPage = 4;
+    this.containerService.updateRefOfStage.next('contactInfo')
   }
 }

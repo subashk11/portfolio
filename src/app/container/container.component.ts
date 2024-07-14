@@ -43,6 +43,16 @@ export class ContainerComponent implements OnInit, AfterViewInit {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      } else if(data == 'projects'){
+        const element = document.getElementById('projectsPage');
+        if(element){
+          element.scrollIntoView({behavior:'smooth', block:'start'})
+        }
+      } else if(data == 'contactInfo') {
+        const element = document.getElementById('contactInfoPage');
+        if(element){
+          element.scrollIntoView({ behavior:'smooth', block:'start'})
+        }
       }
 
     })
