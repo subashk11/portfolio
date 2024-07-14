@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ContactPageComponent {
   downloadResume() {
     const link = document.createElement('a');
-    link.href = '../../../assets/files/Resume.pdf'; 
+    link.href = './assets/files/Resume.pdf'; 
     link.download = 'resume.pdf'; 
     link.click();
   }
