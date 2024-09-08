@@ -3,32 +3,32 @@
         <h3 class="text-4xl space-y-3 my-5">Projects</h3>
     </div>
     <div class="grid-cols-3 flex flex-row justify-center space-x-5">
-        <div class="grid-cols-1 text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between bg-[#252934]">
+        <div class="grid-cols-1 text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between bg-[#252934]" (click)="showProject($event, 'ams')">
             <p class="text-xl font-bold text-center">Absence management system</p>
-            <img src="../../../assets/images/ams_1.png" class="h-36 w-36" alt="">
+            <img src="./assets/images/ams_1.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  Java, Spring, SpringMVC, Hibernate, JSP , Mysql
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between">
+        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'ems')">
             <p class="text-xl font-bold text-center">Employee management system</p>
-            <img src="../../../assets/images/ems_1.png" class="h-28 w-28" alt="">
+            <img src="./assets/images/ems_1.png" class="h-28 w-28" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  React, Typescript, NodeJs, ExpressJS, mySQL, Bootstrap
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between">
+        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'weatherApp')">
             <p class="text-xl font-bold text-center">Weather App</p>
-            <img src="../../../assets/images/weather_app1.png" class="h-36 w-36" alt="">
+            <img src="./assets/images/weather_app1.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  Angular, TypeScript, Tailwind
             </p>
         </div>
     </div>
     <div class="grid-cols-3 flex flex-row justify-center space-x-5 my-5">
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between">
+        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'findajob')">
             <p class="text-xl font-bold text-center">Find a job</p>
-            <img src="../../../assets/images/find_a_job.png" class="h-36 w-36" alt="">
+            <img src="./assets/images/find_a_job.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  Java, spring boot, mongoDB, microservices, service registry, spring boot actuator
             </p>
@@ -48,4 +48,41 @@
             </p>
         </div>
     </div>
+    
+    
+    
+    <ng-container *ngIf="showProjDetails">
+        <div class="z-50 fixed inset-0 bg-black text-white bg-opacity-50 flex items-center justify-center">
+            <div class="bg-[#252934] p-6 rounded-lg shadow-lg max-w-screen-lg w-full space-y-4">
+            <div >
+                <p>
+                    <span class="text-xl font-bold">Title : </span>
+                    {{title}}
+                </p>
+                <p>
+                    <span class="text-xl font-bold">Description : </span>
+                    {{description}}
+                </p>
+            </div>
+            <div>
+                <div>
+                    <span class="text-xl font-bold">Work flow : </span>
+                    <p *ngFor="let flow of workflow; let i = index">
+                        {{i+1}}. {{flow}}
+                    </p>
+                </div>
+            </div>
+        
+            <div class="m-4 ml-2 justify-center items-center">
+                <button class="mr-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    <a [href]="link" target="_blank" rel="noopener noreferrer">View</a>
+                </button>
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" (click)="toggleDetails()">close</button>
+            </div>
+            </div>
+        </div>
+    
+    </ng-container>
 </div>
+
+
