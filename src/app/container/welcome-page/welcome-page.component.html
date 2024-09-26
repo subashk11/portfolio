@@ -1,12 +1,22 @@
-<div class="bg-[#252934] text-white h-screen items-center flex justify-center">
+<div class="bg-[#252934] text-white h-screen flex items-center justify-center">
     <div class="text-center space-y-4">
-        <h2 class="font-bold text-5xl">
-            Hello, 
-            <span class="text-[#E31B6D]">I'm Subash</span>
-        </h2>
-        <p class="font-thin text-3xl">
-            I'm a full stack developer.
-        </p>
-        <button class="text-white rounded-sm p-3 max-w-lg ring-white ring-2 text-lg" (click)="renderHeader($event)">View my work</button>
+      <!-- Heading -->
+      <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+        Hello, 
+        <span class="text-[#E31B6D]">I'm Subash</span>
+      </h2>
+  
+      <!-- Subheading -->
+      <p class="font-thin text-lg sm:text-xl md:text-2xl lg:text-3xl">
+        I'm a full stack developer.
+      </p>
+  
+      <!-- Button -->
+      <button 
+        class="text-white rounded-sm p-3 sm:p-3  max-w-lg ring-white ring-2 text-sm sm:text-md md:text-lg lg:text-xl"
+        (click)="renderHeader($event)">
+        View my work
+      </button>
     </div>
-</div>
+  </div>
+  
