@@ -1,23 +1,23 @@
-<div class="justify-center align-middle my-9">
+<div class="justify-center items-center my-9">
     <div class="text-center my-6 p-4">
-        <h3 class="text-4xl space-y-3 my-5">Projects</h3>
+        <h3 class="text-4xl space-y-3 my-5 font-bold text-[#252934]">Projects</h3>
     </div>
-    <div class="grid-cols-3 flex flex-row justify-center space-x-5">
-        <div class="grid-cols-1 text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between bg-[#252934]" (click)="showProject($event, 'ams')">
+    <div class="md:grid-cols-3 lg:grid-cols-1 md:flex-row lg:flex-row flex-col flex items-center gap-y-4 justify-center md:gap-x-5 lg:gap-x-5">
+        <div class="md:grid-cols-1 lg:grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'ams')">
             <p class="text-xl font-bold text-center">Absence management system</p>
             <img src="./assets/images/ams_1.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  Java, Spring, SpringMVC, Hibernate, JSP, MySQL
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'ems')">
+        <div class="md:grid-cols-1 lg:grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'ems')">
             <p class="text-xl font-bold text-center">Employee management system</p>
             <img src="./assets/images/ems_1.png" class="h-28 w-28" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  React, Typescript, NodeJs, ExpressJS, MySQL, Bootstrap
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'weatherApp')">
+        <div class="md:grid-cols-1 lg:grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'weatherApp')">
             <p class="text-xl font-bold text-center">Weather App</p>
             <img src="./assets/images/weather_app1.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
@@ -25,22 +25,22 @@
             </p>
         </div>
     </div>
-    <div class="grid-cols-3 flex flex-row justify-center space-x-5 my-5">
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'findajob')">
+    <div class="md:grid-cols-3 lg:grid-cols-1 md:flex-row lg:flex-row flex-col flex items-center gap-y-4 my-5 justify-center md:gap-x-5 lg:gap-x-5">
+        <div class="md:grid-cols-1 lg:grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between" (click)="showProject($event, 'findajob')">
             <p class="text-xl font-bold text-center">Find a job</p>
             <img src="./assets/images/find_a_job.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  Java, Spring boot, MongoDB, Microservices, Service registry, Spring boot actuator
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px]  flex-col items-center justify-between hidden">
+        <div class="md:grid-cols-1 lg:grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] flex-col items-center justify-between hidden">
             <p class="text-xl font-bold text-center">Employee management system</p>
             <img src="../../../assets/images/ems_1.png" class="h-28 w-28" alt="">
             <p class="text-sm my-3">
                 <span class="font-bold">Technologies used :</span>  React, Typescript, NodeJs, ExpressJS, mySQL, Bootstrap
             </p>
         </div>
-        <div class="grid-cols-1 bg-[#252934] text-white p-4 h-[300px] w-[300px] hidden flex-col items-center justify-between">
+        <div class="md:grid-cols-1 lg:grid-cols-1 hidden bg-[#252934] text-white p-4 h-[300px] w-[300px] flex flex-col items-center justify-between">
             <p class="text-xl font-bold text-center">Weather App</p>
             <img src="../../../assets/images/weather_app1.png" class="h-36 w-36" alt="">
             <p class="text-sm my-3">

@@ -8,12 +8,14 @@ import { ContainerService } from '../container.service';
 })
 export class HeaderComponent {
   isMobileMenuOpen: boolean;
+  sectionName: string = "Home"
   constructor(public containerService:ContainerService){}
 
   //ENABLE HOME PAGE LAYOUT
   openHome(){
     this.containerService.updateRefOfStage.next('welcome');
     this.containerService.currentPage = 0;
+    this.sectionName = "Home"
     this.toggleMobileMenu()
   }
 
@@ -21,18 +23,21 @@ export class HeaderComponent {
   openAbout(){
     this.containerService.updateRefOfStage.next('about');
     this.containerService.currentPage = 1;
+    this.sectionName = "About"
     this.toggleMobileMenu()
   }
 
   openSkills(){
     this.containerService.currentPage = 2;
     this.containerService.updateRefOfStage.next('skills');
+    this.sectionName = "Skills"
     this.toggleMobileMenu()
   }
 
   openProjects(){
     this.containerService.currentPage = 3;
     this.containerService.updateRefOfStage.next('projects');
+    this.sectionName = "Projects"
     this.toggleMobileMenu()
 
   }
@@ -40,6 +45,7 @@ export class HeaderComponent {
   openContactInfo(){
     this.containerService.currentPage = 4;
     this.containerService.updateRefOfStage.next('contactInfo')
+    this.sectionName = "Contact"
     this.toggleMobileMenu()
   }
 
