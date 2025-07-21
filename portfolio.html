@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subash K - Portfolio</title>
+    
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    /* color: #1f2937;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
+    color: #f1f5f9;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 0;
+}
+
+.section:nth-child(even) {
+    /* background: rgba(255, 255, 255, 0.5); */
+    background: transparent;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    /* color: #4b5563; */
+    color: #cbd5e1;
+}
+
+/* Resume Grid */
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resume-category h3 {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.resume-item {
+    /* background: white; */
+    background: #1f2937;
+    padding: 2rem;
+    border-radius: 1rem;
+    /* box-shadow: 0 5px 20px rgba(0,0,0,0.1); */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3b82f6;
+}
+
+.resume-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* color: #1f2937; */
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.resume-meta {
+    /* color: #6b7280; */
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.resume-item p:last-child {
+    /* color: #4b5563; */
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    /* background: white; */
+    background: #1f2937;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+    box-shadow: 0 10px 30px rgba(0,0,0,0,5);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    /* margin-bottom: 0.5rem;
+    color: #1f2937; */
+    margin-bottom: 0.5rem;
+    color: #f1f5f9;
+}
+
+.project-meta {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    /* color: #4b5563; */
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact Section */
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    /* color: #4b5563; */
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-links a {
+    /* color: #3b82f6; */
+    background: #0f172a;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #3b82f6;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">Subash K</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-name">Subash K</h1>
+            <!-- <p class="hero-subtitle">Software Engineer with 2+ years of experience in building scalable web applications using Java, Spring Boot, Angular, and Node.js.</p> -->
+            <p class="hero-subtitle">A Software Engineer with over two years of experience building scalable web applications using Java, Spring Boot, Angular, and Node.js.</p>
+            <p class="hero-description">Passionate about creating innovative solutions and leveraging technology to solve real-world problems.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <!-- <p>Full Stack Developer with over 2 years of experience in building scalable and maintainable web applications using Java, Spring Boot, Angular, and Node.js within microservices-based architectures. </p> -->
+                <p>I am a Full Stack Developer with over 2 years of experience building scalable and maintainable web applications. My expertise lies in using Java, Spring Boot, Angular, and Node.js within microservices-based architectures.</p>
+                <p>I am passionate about creating innovative solutions and leveraging technology to solve real-world problems. I am a strong believer in continuous learning and staying up-to-date with the latest technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="resume-grid">
+                <div class="resume-category">
+                    <h3>Experience</h3>
+                    <div class="resume-item">
+                        <h4>Software Engineer</h4>
+                        <p class="resume-meta">Edvak Health • May 2024 – Present</p>
+                        <p>Implemented key enterprise application features using Angular, TypeScript, MongoDB, and Node.js, contributing to system scalability and modularity.</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Associate Software Engineer</h4>
+                        <p class="resume-meta">PowerSchool • Sep 2022 – Jan 2024</p>
+                        <p>Designed and developed backend services using Java, Spring Boot, and MySQL, enabling reliable API-driven communication between services.</p>
+                    </div>
+                </div>
+                <div class="resume-category">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>M.Tech Integrated in Software Engineering</h4>
+                        <p class="resume-meta">Vellore Institute of Technology • 2018 – 2023</p>
+                        <p>CGPA: 8.1/10</p>
+                    </div>
+                </div>
+                <div class="resume-category">
+                    <h3>Certifications</h3>
+                    <div class="resume-item">
+                        <h4>(Add Certifications Here)</h4>
+                        <p class="resume-meta">(Add Certification Details Here)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">RESTful APIs</span>
+                    <span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">Data Structures and Algorithms (DSA)</span>
+                    <span class="skill-tag">Object-Oriented Programming (OOP)</span>
+                    <span class="skill-tag">RDBMS</span>
+                    <span class="skill-tag">NoSQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <h3 class="project-title">Find a Job</h3>
+                    <p class="project-meta">GitHub | Spring Boot, MongoDB, Microservices, Service Registry</p>
+                    <p class="project-description">Designed and implemented a microservices-based job search platform with services for job listings, user management, and company reviews.</p>
+                </div>
+                <div class="project-card fade-in">
+                    <h3 class="project-title">Absence Management System</h3>
+                    <p class="project-meta">Spring Framework, Java EE, Spring Boot, Angular</p>
+                    <p class="project-description">Streamlined the process of managing teacher absences and assigning substitutes through a full-stack web solution.</p>
+                </div>
+                <div class="project-card fade-in">
+                    <h3 class="project-title">Breeze Watch</h3>
+                    <p class="project-meta">GitHub | Angular, Tailwind CSS, TypeScript</p>
+                    <p class="project-description">Built a responsive weather application that retrieves real-time weather data and forecasts based on city input.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>Let's connect and discuss opportunities!</p>
+                <div class="footer-links">
+                    <a href="mailto:subashk1153@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/subashprofile/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/subashk11" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Subash K. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
